@@ -42,7 +42,7 @@ if (graficoDesmatamentoCtx) {
             labels: ['Agropecuária', 'Exploração Florestal', 'Mineração', 'Expansão Urbana', 'Outros'],
             datasets: [{
                 label: 'Participação (%)',
-                data: [45, 25, 15, 10, 5], // Dados fictícios - SUBSTITUA PELOS REAIS
+                data: [45, 25, 15, 10, 5], // Dados fictícios - substitua pelos reais
                 backgroundColor: [
                     'rgba(75, 192, 192, 0.7)',
                     'rgba(255, 99, 132, 0.7)',
@@ -84,18 +84,28 @@ if (graficoDesmatamentoCtx) {
     });
 }
 
-// Mapa Interativo (Leaflet.js)
+// Mapa Interativo (Simulação - Necessitaria de uma biblioteca de mapas como Leaflet)
 const mapaDiv = document.getElementById('mapa');
 if (mapaDiv) {
-    const map = L.map('mapa').setView([-24.726, -53.053], 13); // Coordenadas de Toledo-PR e zoom
+    mapaDiv.innerHTML = '<p>O mapa interativo com os pontos de conexão entre o campo e a cidade (feiras, mercados, produtores locais) será implementado aqui utilizando uma biblioteca de mapas como o Leaflet.js.</p><p>Esses pontos são cruciais para fortalecer a economia local, garantir o acesso a alimentos frescos e promover o diálogo entre produtores e consumidores.</p>';
+    // No projeto real, você integraria uma biblioteca de mapas aqui
+    // e adicionaria marcadores representando pontos de conexão campo-cidade.
+}
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+// Envio de Formulário de Contato (Simulação)
+const formContato = document.getElementById('formContato');
+const mensagemSucesso = document.getElementById('mensagem-sucesso');
 
-    // Adicione marcadores para pontos de conexão campo-cidade em Toledo
-    L.marker([-24.72, -53.06]).addTo(map) // Exemplo: Feira do Produtor de Toledo (coordenadas aproximadas)
-        .bindPopup('Feira do Produtor de Toledo');
-
-    L.marker([-24.73, -53.04]).addTo(map) // Exemplo: Mercado Municipal de Toledo (coordenadas aproximadas)
-        .bindPopup('Mercado Municipal de Toledo');
+if (formContato) {
+    formContato.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Aqui você poderia adicionar lógica para enviar os dados do formulário
+        // para um servidor (isso está fora do escopo do HTML/CSS/JS estático).
+        // Para simular, vamos apenas mostrar uma mensagem de sucesso.
+        mensagemSucesso.classList.remove('oculto');
+        formContato.reset();
+        setTimeout(() => {
+            mensagemSucesso.classList.add('oculto');
+        }, 3000);
+    });
+}
