@@ -11,18 +11,25 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Interação do Accordion
-const accordionBtns = document.querySelectorAll('.accordion-item button');
+// Interação do Accordion (CORREÇÃO)
+const accordionItems = document.querySelectorAll('.accordion-item');
 
-accordionBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        const content = this.nextElementSibling;
+accordionItems.forEach(item => {
+    const button = item.querySelector('button');
+    const content = item.querySelector('.accordion-content');
+    const icon = button.querySelector('i'); // Assumindo que o ícone está dentro do botão
+
+    button.addEventListener('click', function() {
         const expanded = this.getAttribute('aria-expanded') === 'true' || false;
 
         this.setAttribute('aria-expanded', !expanded);
         content.style.display = expanded ? 'none' : 'block';
-        this.querySelector('i').classList.toggle('fa-chevron-down');
-        this.querySelector('i').classList.toggle('fa-chevron-up');
+
+        // Alterna as classes do ícone se o elemento <i> existir
+        if (icon) {
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
     });
 });
 
