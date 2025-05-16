@@ -11,7 +11,7 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Interação do Accordion (CORREÇÃO)
+// Interação do Accordion
 const accordionItems = document.querySelectorAll('.accordion-item');
 
 accordionItems.forEach(item => {
@@ -87,7 +87,7 @@ if (graficoDesmatamentoCtx) {
 // Mapa Interativo (Simulação - Necessitaria de uma biblioteca de mapas como Leaflet)
 const mapaDiv = document.getElementById('mapa');
 if (mapaDiv) {
-    mapaDiv.innerHTML = '<p>Mapa interativo será implementado aqui (requer biblioteca de mapas como Leaflet.js).</p>';
+    mapaDiv.innerHTML = '<p>O mapa interativo com os pontos de conexão entre o campo e a cidade (feiras, mercados, produtores locais) será implementado aqui utilizando uma biblioteca de mapas como o Leaflet.js.</p><p>Esses pontos são cruciais para fortalecer a economia local, garantir o acesso a alimentos frescos e promover o diálogo entre produtores e consumidores.</p>';
     // No projeto real, você integraria uma biblioteca de mapas aqui
     // e adicionaria marcadores representando pontos de conexão campo-cidade.
 }
