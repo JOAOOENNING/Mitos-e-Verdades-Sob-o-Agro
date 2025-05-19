@@ -123,25 +123,5 @@ if (formContato) {
         setTimeout(() => {
             mensagemSucesso.classList.add('oculto');
         }, 3000);
-   });
-
-  // Botão "Voltar ao Topo"
-const btnTopo = document.getElementById('btnTopo');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        btnTopo.classList.remove('oculto');
-    } else {
-        btnTopo.classList.add('oculto');
-    }
-});
-
-btnTopo.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
     });
-});
-
-
 }
