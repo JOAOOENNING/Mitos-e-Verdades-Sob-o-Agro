@@ -375,3 +375,6 @@ footer p {
 .redes-sociais a:hover {
     color: #f8f9fa;
 }
+html {
+  scroll-behavior: smooth;
+}
