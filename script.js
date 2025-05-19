@@ -84,12 +84,28 @@ if (graficoDesmatamentoCtx) {
     });
 }
 
-// Mapa Interativo (Simulação - Necessitaria de uma biblioteca de mapas como Leaflet)
+// Mapa Interativo (Leaflet.js)
 const mapaDiv = document.getElementById('mapa');
 if (mapaDiv) {
-    mapaDiv.innerHTML = '<p>O mapa interativo com os pontos de conexão entre o campo e a cidade (feiras, mercados, produtores locais) será implementado aqui utilizando uma biblioteca de mapas como o Leaflet.js.</p><p>Esses pontos são cruciais para fortalecer a economia local, garantir o acesso a alimentos frescos e promover o diálogo entre produtores e consumidores.</p>';
-    // No projeto real, você integraria uma biblioteca de mapas aqui
-    // e adicionaria marcadores representando pontos de conexão campo-cidade.
+    const mapa = L.map('mapa').setView([-24.89, -51.55], 7);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mapa);
+
+    const pontos = [
+        { nome: 'Toledo', coords: [-24.7169, -53.7419], info: 'Forte produção de suínos e milho.' },
+        { nome: 'Castro', coords: [-24.7917, -50.0178], info: 'Importante bacia leiteira.' },
+        { nome: 'Cascavel', coords: [-24.9556, -53.4583], info: 'Produção de grãos e agroindústria.' },
+        { nome: 'Arapoti', coords: [-24.1597, -49.8292], info: 'Destaque na produção de mel.' },
+        { nome: 'Guarapuava', coords: [-25.3700, -51.4900], info: 'Significativa produção de grãos.' },
+        { nome: 'Londrina', coords: [-23.3056, -51.1522], info: 'Centro regional agrícola.' }
+    ];
+
+    pontos.forEach(ponto => {
+        const marcador = L.marker(ponto.coords).addTo(mapa);
+        marcador.bindPopup(`<b>${ponto.nome}</b><br>${ponto.info}`);
+    });
 }
 
 // Envio de Formulário de Contato (Simulação)
