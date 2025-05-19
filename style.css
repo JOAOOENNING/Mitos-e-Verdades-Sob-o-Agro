@@ -375,6 +375,8 @@ footer p {
 .redes-sociais a:hover {
     color: #f8f9fa;
 }
+
+/* >>> Rolagem suave adicionada aqui <<< */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
