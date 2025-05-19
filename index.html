@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desmistificando o Agro: Verdades que Conectam Campo e Cidade</title>
+    <title>Desmistificando o Agro: Verdades que Conectam Campo e Cidade no Paraná</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #mapa {
+        height: 400px;
+        width: 100%;
+      }
+      .legenda-mapa {
+        margin-top: 10px;
+        font-style: italic;
+      }
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Desmistificando o Agro</h1>
+            <h1>Desmistificando o Agro no Paraná</h1>
             <p>Verdades que Conectam Campo e Cidade</p>
             <nav>
                 <ul>
@@ -27,8 +38,8 @@
 
     <main class="container">
         <section id="introducao" class="destaque">
-            <h2>Entendendo a Importância do Agro</h2>
-            <p>A agricultura desempenha um papel crucial em nossa sociedade, fornecendo alimentos, gerando empregos e impulsionando a economia. No entanto, muitas vezes, informações equivocadas podem obscurecer a realidade do setor. Este site busca desmistificar alguns dos mitos mais comuns, apresentando fatos e dados que conectam o campo à cidade de forma transparente e informativa.</p>
+            <h2>Entendendo a Importância do Agro Paranaense</h2>
+            <p>A agricultura desempenha um papel crucial em nossa sociedade, fornecendo alimentos, gerando empregos e impulsionando a economia. No entanto, muitas vezes, informações equivocadas podem obscurecer a realidade do setor. Este site busca desmistificar alguns dos mitos mais comuns, apresentando fatos e dados que conectam o campo à cidade de forma transparente e informativa, com foco no estado do Paraná.</p>
             <p>Explore os mitos abaixo e descubra as verdades por trás deles:</p>
             <div class="destaque-mitos">
                 <a href="#mito1"><i class="fas fa-flask"></i> Agrotóxicos e Saúde</a>
@@ -138,15 +149,12 @@
         </section>
 
         <section id="conexao" class="secao-geral">
-            <h2>Conexão Campo-Cidade</h2>
-            <p>Descubra como o campo e a cidade se complementam e se beneficiam mutuamente...</p>
+            <h2>Conexão Campo-Cidade no Paraná</h2>
+            <p>Descubra como o campo e a cidade se complementam e se beneficiam mutuamente no Paraná...</p>
             <div class="mapa-interativo">
-                <h3>Pontos de Conexão</h3>
-                <div id="mapa">
-                    <p>O mapa interativo com os pontos de conexão entre o campo e a cidade (feiras, mercados, produtores locais) será implementado aqui utilizando uma biblioteca de mapas como o Leaflet.js.</p>
-                    <p>Esses pontos são cruciais para fortalecer a economia local, garantir o acesso a alimentos frescos e promover o diálogo entre produtores e consumidores.</p>
-                </div>
-                <p class="legenda-mapa">Clique nos marcadores (quando implementados) para mais informações.</p>
+                <h3>Pontos de Conexão Agrícola no Paraná</h3>
+                <div id="mapa"></div>
+                <p class="legenda-mapa">Clique nos marcadores para mais informações.</p>
             </div>
         </section>
 
@@ -188,5 +196,55 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      // Inicializa o mapa, centralizado no Paraná
+      const mapa = L.map('mapa').setView([-24.89, -51.55], 7); // Coordenadas aproximadas do centro do Paraná, zoom ajustado
+
+      // Adiciona uma camada de tiles (mapa base)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(mapa);
+
+      // Pontos de conexão agrícola no Paraná (exemplos)
+      const pontos = [
+        {
+          nome: 'Toledo',
+          coords: [-24.7169, -53.7419],
+          info: 'Forte produção de suínos e milho.'
+        },
+        {
+          nome: 'Castro',
+          coords: [-24.7917, -50.0178],
+          info: 'Importante bacia leiteira.'
+        },
+        {
+          nome: 'Cascavel',
+          coords: [-24.9556, -53.4583],
+          info: 'Produção de grãos e agroindústria.'
+        },
+        {
+          nome: 'Arapoti',
+          coords: [-24.1597, -49.8292],
+          info: 'Destaque na produção de mel.'
+        },
+         {
+          nome: 'Guarapuava',
+          coords: [-25.3700, -51.4900],
+          info: 'Significativa produção de grãos.'
+         },
+          {
+          nome: 'Londrina',
+          coords: [-23.3056, -51.1522],
+          info: 'Centro regional agrícola.'
+         },
+      ];
+
+      // Adiciona marcadores ao mapa
+      pontos.forEach(ponto => {
+        const marcador = L.marker(ponto.coords).addTo(mapa);
+        marcador.bindPopup(`<b>${ponto.nome}</b><br>${ponto.info}`);
+      });
+    </script>
 </body>
 </html>
