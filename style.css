@@ -376,7 +376,6 @@ footer p {
     color: #f8f9fa;
 }
 
-/* >>> Rolagem suave adicionada aqui <<< */
 html {
     scroll-behavior: smooth;
 }
