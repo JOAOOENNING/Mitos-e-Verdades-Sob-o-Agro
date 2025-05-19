@@ -1,250 +1,499 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desmistificando o Agro: Verdades que Conectam Campo e Cidade no Paraná</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-      #mapa {
-        height: 400px;
-        width: 100%;
-      }
-      .legenda-mapa {
-        margin-top: 10px;
-        font-style: italic;
-      }
-    </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Desmistificando o Agro: Verdades que Conectam Campo e Cidade no Paraná</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<style>
+
+#mapa {
+
+height: 400px;
+
+width: 100%;
+
+}
+
+.legenda-mapa {
+
+margin-top: 10px;
+
+font-style: italic;
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <header class="cabecalho-principal">
-        <div class="container">
-            <h1 class="titulo-principal">Desmistificando o Agro no Paraná</h1>
-            <p class="subtitulo-principal">Verdades que Conectam Campo e Cidade</p>
-            <nav class="navegacao-principal">
-                <ul>
-                    <li><a href="#mito1">Agrotóxicos e Saúde</a></li>
-                    <li><a href="#mito2">Agro e Desmatamento</a></li>
-                    <li><a href="#mito3">Acessibilidade dos Orgânicos</a></li>
-                    <li><a href="#por-dentro">Por Dentro do Agro</a></li>
-                    <li><a href="#conexao">Conexão Campo-Cidade</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container conteudo-principal">
-        <section id="introducao" class="secao-destaque">
-            <h2>Entendendo a Importância do Agro Paranaense</h2>
-            <p>A agricultura desempenha um papel crucial em nossa sociedade, fornecendo alimentos, gerando empregos e impulsionando a economia. No entanto, muitas vezes, informações equivocadas podem obscurecer a realidade do setor. Este site busca desmistificar alguns dos mitos mais comuns, apresentando fatos e dados que conectam o campo à cidade de forma transparente e informativa, com foco no estado do Paraná.</p>
-            <p>Explore os mitos abaixo e descubra as verdades por trás deles:</p>
-            <div class="destaque-mitos">
-                <a href="#mito1"><i class="fas fa-flask"></i> Agrotóxicos e Saúde</a>
-                <a href="#mito2"><i class="fas fa-tree"></i> Agro e Desmatamento</a>
-                <a href="#mito3"><i class="fas fa-carrot"></i> Acessibilidade dos Orgânicos</a>
-            </div>
-        </section>
+<header>
 
-        <section id="mito1" class="secao-mito">
-            <h2>Mito: Agrotóxicos são sempre prejudiciais à saúde</h2>
-            <div class="conteudo-secao">
-                <article class="mito">
-                    <h3>O Mito</h3>
-                    <p>A crença comum é que todo e qualquer agrotóxico representa um perigo iminente para a saúde humana e o meio ambiente.</p>
-                </article>
-                <article class="verdade">
-                    <h3>A Verdade</h3>
-                    <p>A realidade é mais complexa. Existem regulamentações rigorosas sobre o uso de defensivos agrícolas, com limites máximos de resíduos permitidos nos alimentos. A ciência busca garantir que, dentro desses limites e com o uso correto, os riscos sejam minimizados. Além disso, há um crescente investimento em práticas de manejo integrado de pragas e em alternativas agroecológicas.</p>
-                    <details>
-                        <summary>Mais Detalhes</summary>
-                        <p>Explore estudos científicos e regulamentações de órgãos como a ANVISA e o Ministério da Agricultura sobre o uso de agrotóxicos.</p>
-                        <ul>
-                            <li>Link para um estudo sobre o monitoramento de resíduos em alimentos.</li>
-                            <li>Informações sobre as classes toxicológicas de agrotóxicos.</li>
-                        </ul>
-                    </details>
-                </article>
-            </div>
-            <a href="#topo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
-        </section>
+<div class="container">
 
-        <section id="mito2" class="secao-mito">
-            <h2>Mito: A agricultura é a principal responsável pelo desmatamento</h2>
-            <div class="conteudo-secao">
-                <article class="mito">
-                    <h3>O Mito</h3>
-                    <p>Muitos acreditam que a expansão da agropecuária é a maior causa da destruição de florestas e outros biomas.</p>
-                </article>
-                <article class="verdade">
-                    <h3>A Verdade</h3>
-                    <p>Embora a agropecuária possa ser um fator de pressão, o desmatamento é um problema multifacetado com diversas causas, incluindo a exploração ilegal de madeira, a mineração e a expansão urbana. A agricultura moderna também busca práticas sustentáveis e a recuperação de áreas degradadas. É importante analisar dados específicos de cada região para entender as causas predominantes do desmatamento.</p>
-                    <div class="grafico-container">
-                        <h3>Participação Setorial no Desmatamento (Exemplo)</h3>
-                        <canvas id="graficoDesmatamento"></canvas>
-                        <p class="legenda-grafico">Fonte: Dados fictícios para ilustração.</p>
-                    </div>
-                </article>
-            </div>
-            <a href="#topo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
-        </section>
+<h1>Desmistificando o Agro no Paraná</h1>
 
-        <section id="mito3" class="secao-mito">
-            <h2>Mito: Alimentos orgânicos são inacessíveis para a maioria da população</h2>
-            <div class="conteudo-secao">
-                <article class="mito">
-                    <h3>O Mito</h3>
-                    <p>Existe a percepção de que produtos orgânicos são sempre muito mais caros e, portanto, um privilégio de poucos.</p>
-                </article>
-                <article class="verdade">
-                    <h3>A Verdade</h3>
-                    <p>Embora alguns produtos orgânicos possam ter um preço mais elevado devido aos métodos de produção e escala, a agricultura familiar e as feiras agroecológicas têm contribuído para tornar esses alimentos mais acessíveis. Além disso, o custo-benefício a longo prazo para a saúde e o meio ambiente deve ser considerado.</p>
-                    <div class="galeria-container">
-                        <h3>Onde Encontrar Orgânicos Acessíveis</h3>
-                        <div class="galeria">
-                            <img src="https://www.idrparana.pr.gov.br/sites/iapar/arquivos_restritos/files/imagem/2024-08/feira_paranagua2.jpg" alt="Feira de Paranaguá">
-                            <img src="https://cidadeseducadoras.curitiba.pr.gov.br/wp-content/uploads/2023/05/Mercado-Municipal-Foto-Pedro-Ribas-SMCS.jpg" alt="Mercado Municipal de Curitiba">
-                            <img src="capa_campofacil.webp" alt="Campanha de Incentivo a Compra e Venda Direto do Produtor">
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <a href="#topo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
-        </section>
+<p>Verdades que Conectam Campo e Cidade</p>
 
-        <section id="por-dentro" class="secao-geral">
-            <h2>Por Dentro do Agro</h2>
-            <p>Explore as práticas, tecnologias e a importância da agricultura moderna para a nossa sociedade...</p>
-            <div class="accordion">
-                <div class="item-accordion">
-                    <button class="botao-accordion" aria-expanded="false">
-                        Agricultura de Precisão <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="conteudo-accordion">
-                        <p>A agricultura de precisão utiliza tecnologias como GPS, sensores e drones para otimizar o uso de insumos, aumentar a produtividade e reduzir o impacto ambiental. Isso permite um manejo mais eficiente da lavoura, com aplicações de fertilizantes e defensivos em taxas variáveis, de acordo com a necessidade de cada ponto da área cultivada.</p>
-                        <p>Benefícios incluem a redução de custos, o aumento da produção e a diminuição do impacto ambiental.</p>
-                    </div>
-                </div>
-                <div class="item-accordion">
-                    <button class="botao-accordion" aria-expanded="false">
-                        Sustentabilidade no Agro <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="conteudo-accordion">
-                        <p>Práticas como o plantio direto, a rotação de culturas e o manejo integrado de pragas são exemplos de como a agricultura pode ser mais sustentável. O plantio direto, por exemplo, mantém a palhada sobre o solo, protegendo-o contra a erosão e melhorando a sua estrutura. A rotação de culturas ajuda a quebrar o ciclo de pragas e doenças e a melhorar a fertilidade do solo.</p>
-                        <p>A sustentabilidade no agro busca conciliar a produção de alimentos com a preservação dos recursos naturais.</p>
-                    </div>
-                </div>
-                <div class="item-accordion">
-                    <button class="botao-accordion" aria-expanded="false">
-                        Biotecnologia na Agricultura <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="conteudo-accordion">
-                        <p>A biotecnologia oferece diversas ferramentas para a agricultura, como o desenvolvimento de plantas mais resistentes a pragas, doenças e condições climáticas adversas. As sementes geneticamente modificadas (OGMs) são um exemplo, embora seu uso seja tema de debate e regulamentação.</p>
-                        <p>A biotecnologia também contribui para o desenvolvimento de biofertilizantes e biopesticidas, alternativas mais sustentáveis aos produtos químicos tradicionais.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<nav>
 
-        <section id="conexao" class="secao-geral">
-            <h2>Conexão Campo-Cidade no Paraná</h2>
-            <p>Descubra como o campo e a cidade se complementam e se beneficiam mutuamente no Paraná...</p>
-            <div class="mapa-interativo">
-                <h3>Pontos de Conexão Agrícola no Paraná</h3>
-                <div id="mapa"></div>
-                <p class="legenda-mapa">Clique nos marcadores para mais informações.</p>
-            </div>
-        </section>
+<ul>
 
-        <aside id="sobre" class="secao-lateral">
-            <h2>Sobre Nós</h2>
-            <p>Este site foi desenvolvido como um projeto para o concurso Agrinho, com o objetivo de desmistificar alguns conceitos sobre a agricultura e fortalecer a compreensão da importante conexão entre o campo e a cidade.</p>
-            <p>O desenvolvimento foi realizado por João Othávio Oenning, um estudante do ensino médio com interesse em programação e na temática do agronegócio.</p>
-            <div class="formulario-contato">
-                <h3>Entre em Contato</h3>
-                <form id="formContato">
-                    <div class="campo-formulario">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    <div class="campo-formulario">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="campo-formulario">
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                    </div>
-                    <button type="submit">Enviar</button>
-                    <div id="mensagem-sucesso" class="mensagem-sucesso oculto">Mensagem enviada com sucesso!</div>
-                </form>
-            </div>
-        </aside>
-    </main>
+<li><a href="#mito1">Agrotóxicos e Saúde</a></li>
 
-    <footer class="rodape-principal">
-        <div class="container">
-            <p>&copy; 2025 Desmistificando o Agro</p>
-            <div class="redes-sociais">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
+<li><a href="#mito2">Agro e Desmatamento</a></li>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-      // Inicializa o mapa, centralizado no Paraná
-      const mapa = L.map('mapa').setView([-24.89, -51.55], 7); // Coordenadas aproximadas do centro do Paraná, zoom ajustado
+<li><a href="#mito3">Acessibilidade dos Orgânicos</a></li>
 
-      // Adiciona uma camada de tiles (mapa base)
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(mapa);
+<li><a href="#por-dentro">Por Dentro do Agro</a></li>
 
-      // Pontos de conexão agrícola no Paraná (exemplos)
-      const pontos = [
-        {
-          nome: 'Toledo',
-          coords: [-24.7169, -53.7419],
-          info: 'Forte produção de suínos e milho.'
-        },
-        {
-          nome: 'Castro',
-          coords: [-24.7917, -50.0178],
-          info: 'Importante bacia leiteira.'
-        },
-        {
-          nome: 'Cascavel',
-          coords: [-24.9556, -53.4583],
-          info: 'Produção de grãos e agroindústria.'
-        },
-        {
-          nome: 'Arapoti',
-          coords: [-24.1597, -49.8292],
-          info: 'Destaque na produção de mel.'
-        },
-         {
-          nome: 'Guarapuava',
-          coords: [-25.3700, -51.4900],
-          info: 'Significativa produção de grãos.'
-         },
-          {
-          nome: 'Londrina',
-          coords: [-23.3056, -51.1522],
-          info: 'Centro regional agrícola.'
-         },
-      ];
+<li><a href="#conexao">Conexão Campo-Cidade</a></li>
 
-      // Adiciona marcadores ao mapa
-      pontos.forEach(ponto => {
-        const marcador = L.marker(ponto.coords).addTo(mapa);
-        marcador.bindPopup(`<b>${ponto.nome}</b><br>${ponto.info}`);
-      });
-    </script>
+<li><a href="#sobre">Sobre Nós</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main class="container">
+
+<section id="introducao" class="destaque">
+
+<h2>Entendendo a Importância do Agro Paranaense</h2>
+
+<p>A agricultura desempenha um papel crucial em nossa sociedade, fornecendo alimentos, gerando empregos e impulsionando a economia. No entanto, muitas vezes, informações equivocadas podem obscurecer a realidade do setor. Este site busca desmistificar alguns dos mitos mais comuns, apresentando fatos e dados que conectam o campo à cidade de forma transparente e informativa, com foco no estado do Paraná.</p>
+
+<p>Explore os mitos abaixo e descubra as verdades por trás deles:</p>
+
+<div class="destaque-mitos">
+
+<a href="#mito1"><i class="fas fa-flask"></i> Agrotóxicos e Saúde</a>
+
+<a href="#mito2"><i class="fas fa-tree"></i> Agro e Desmatamento</a>
+
+<a href="#mito3"><i class="fas fa-carrot"></i> Acessibilidade dos Orgânicos</a>
+
+</div>
+
+</section>
+
+
+
+<section id="mito1" class="mito-secao">
+
+<h2>Mito: Agrotóxicos são sempre prejudiciais à saúde</h2>
+
+<div class="conteudo-mito">
+
+<div class="mito">
+
+<h3>O Mito</h3>
+
+<p>A crença comum é que todo e qualquer agrotóxico representa um perigo iminente para a saúde humana e o meio ambiente.</p>
+
+</div>
+
+<div class="verdade">
+
+<h3>A Verdade</h3>
+
+<p>A realidade é mais complexa. Existem regulamentações rigorosas sobre o uso de defensivos agrícolas, com limites máximos de resíduos permitidos nos alimentos. A ciência busca garantir que, dentro desses limites e com o uso correto, os riscos sejam minimizados. Além disso, há um crescente investimento em práticas de manejo integrado de pragas e em alternativas agroecológicas.</p>
+
+<details>
+
+<summary>Mais Detalhes</summary>
+
+<p>Explore estudos científicos e regulamentações de órgãos como a ANVISA e o Ministério da Agricultura sobre o uso de agrotóxicos.</p>
+
+<ul>
+
+<li>Link para um estudo sobre o monitoramento de resíduos em alimentos.</li>
+
+<li>Informações sobre as classes toxicológicas de agrotóxicos.</li>
+
+</ul>
+
+</details>
+
+</div>
+
+</div>
+
+<a href="#topo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
+
+</section>
+
+
+
+<section id="mito2" class="mito-secao">
+
+<h2>Mito: A agricultura é a principal responsável pelo desmatamento</h2>
+
+<div class="conteudo-mito">
+
+<div class="mito">
+
+<h3>O Mito</h3>
+
+<p>Muitos acreditam que a expansão da agropecuária é a maior causa da destruição de florestas e outros biomas.</p>
+
+</div>
+
+<div class="verdade">
+
+<h3>A Verdade</h3>
+
+<p>Embora a agropecuária possa ser um fator de pressão, o desmatamento é um problema multifacetado com diversas causas, incluindo a exploração ilegal de madeira, a mineração e a expansão urbana. A agricultura moderna também busca práticas sustentáveis e a recuperação de áreas degradadas. É importante analisar dados específicos de cada região para entender as causas predominantes do desmatamento.</p>
+
+<div class="grafico-container">
+
+<h3>Participação Setorial no Desmatamento (Exemplo)</h3>
+
+<canvas id="graficoDesmatamento"></canvas>
+
+<p class="legenda-grafico">Fonte: Dados fictícios para ilustração.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<a href="#topo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
+
+</section>
+
+
+
+<section id="mito3" class="mito-secao">
+
+<h2>Mito: Alimentos orgânicos são inacessíveis para a maioria da população</h2>
+
+<div class="conteudo-mito">
+
+<div class="mito">
+
+<h3>O Mito</h3>
+
+<p>Existe a percepção de que produtos orgânicos são sempre muito mais caros e, portanto, um privilégio de poucos.</p>
+
+</div>
+
+<div class="verdade">
+
+<h3>A Verdade</h3>
+
+<p>Embora alguns produtos orgânicos possam ter um preço mais elevado devido aos métodos de produção e escala, a agricultura familiar e as feiras agroecológicas têm contribuído para tornar esses alimentos mais acessíveis. Além disso, o custo-benefício a longo prazo para a saúde e o meio ambiente deve ser considerado.</p>
+
+<div class="galeria-container">
+
+<h3>Onde Encontrar Orgânicos Acessíveis</h3>
+
+<div class="galeria">
+
+<img src="https://www.idrparana.pr.gov.br/sites/iapar/arquivos_restritos/files/imagem/2024-08/feira_paranagua2.jpg" alt="Feira de Paranaguá">
+
+<img src="https://cidadeseducadoras.curitiba.pr.gov.br/wp-content/uploads/2023/05/Mercado-Municipal-Foto-Pedro-Ribas-SMCS.jpg" alt="Mercado Municipal de Curitiba">
+
+<img src="capa_campofacil.webp" alt="Campanha de Incentivo a Compra e Venda Direto do Produtor">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<a href="#topo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
+
+</section>
+
+
+
+<section id="por-dentro" class="secao-geral">
+
+<h2>Por Dentro do Agro</h2>
+
+<p>Explore as práticas, tecnologias e a importância da agricultura moderna para a nossa sociedade...</p>
+
+<div class="accordion">
+
+<div class="accordion-item">
+
+<button aria-expanded="false">
+
+Agricultura de Precisão <i class="fas fa-chevron-down"></i>
+
+</button>
+
+<div class="accordion-content">
+
+<p>A agricultura de precisão utiliza tecnologias como GPS, sensores e drones para otimizar o uso de insumos, aumentar a produtividade e reduzir o impacto ambiental. Isso permite um manejo mais eficiente da lavoura, com aplicações de fertilizantes e defensivos em taxas variáveis, de acordo com a necessidade de cada ponto da área cultivada.</p>
+
+<p>Benefícios incluem a redução de custos, o aumento da produção e a diminuição do impacto ambiental.</p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button aria-expanded="false">
+
+Sustentabilidade no Agro <i class="fas fa-chevron-down"></i>
+
+</button>
+
+<div class="accordion-content">
+
+<p>Práticas como o plantio direto, a rotação de culturas e o manejo integrado de pragas são exemplos de como a agricultura pode ser mais sustentável. O plantio direto, por exemplo, mantém a palhada sobre o solo, protegendo-o contra a erosão e melhorando a sua estrutura. A rotação de culturas ajuda a quebrar o ciclo de pragas e doenças e a melhorar a fertilidade do solo.</p>
+
+<p>A sustentabilidade no agro busca conciliar a produção de alimentos com a preservação dos recursos naturais.</p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button aria-expanded="false">
+
+Biotecnologia na Agricultura <i class="fas fa-chevron-down"></i>
+
+</button>
+
+<div class="accordion-content">
+
+<p>A biotecnologia oferece diversas ferramentas para a agricultura, como o desenvolvimento de plantas mais resistentes a pragas, doenças e condições climáticas adversas. As sementes geneticamente modificadas (OGMs) são um exemplo, embora seu uso seja tema de debate e regulamentação.</p>
+
+<p>A biotecnologia também contribui para o desenvolvimento de biofertilizantes e biopesticidas, alternativas mais sustentáveis aos produtos químicos tradicionais.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="conexao" class="secao-geral">
+
+<h2>Conexão Campo-Cidade no Paraná</h2>
+
+<p>Descubra como o campo e a cidade se complementam e se beneficiam mutuamente no Paraná...</p>
+
+<div class="mapa-interativo">
+
+<h3>Pontos de Conexão Agrícola no Paraná</h3>
+
+<div id="mapa"></div>
+
+<p class="legenda-mapa">Clique nos marcadores para mais informações.</p>
+
+</div>
+
+</section>
+
+
+
+<section id="sobre" class="secao-geral">
+
+<h2>Sobre Nós</h2>
+
+<p>Este site foi desenvolvido como um projeto para o concurso Agrinho, com o objetivo de desmistificar alguns conceitos sobre a agricultura e fortalecer a compreensão da importante conexão entre o campo e a cidade.</p>
+
+<p>O desenvolvimento foi realizado por João Othávio Oenning, um estudante do ensino médio com interesse em programação e na temática do agronegócio.</p>
+
+<div class="formulario-contato">
+
+<h3>Entre em Contato</h3>
+
+<form id="formContato">
+
+<div class="form-group">
+
+<label for="nome">Nome:</label>
+
+<input type="text" id="nome" name="nome" required>
+
+</div>
+
+<div class="form-group">
+
+<label for="email">Email:</label>
+
+<input type="email" id="email" name="email" required>
+
+</div>
+
+<div class="form-group">
+
+<label for="mensagem">Mensagem:</label>
+
+<textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+</div>
+
+<button type="submit">Enviar</button>
+
+<div id="mensagem-sucesso" class="mensagem-sucesso oculto">Mensagem enviada com sucesso!</div>
+
+</form>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<footer>
+
+<div class="container">
+
+<p>&copy; 2025 Desmistificando o Agro</p>
+
+<div class="redes-sociais">
+
+<a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+
+<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script.js"></script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+
+// Inicializa o mapa, centralizado no Paraná
+
+const mapa = L.map('mapa').setView([-24.89, -51.55], 7); // Coordenadas aproximadas do centro do Paraná, zoom ajustado
+
+
+
+// Adiciona uma camada de tiles (mapa base)
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+attribution: '© OpenStreetMap contributors'
+
+}).addTo(mapa);
+
+
+
+// Pontos de conexão agrícola no Paraná (exemplos)
+
+const pontos = [
+
+{
+
+nome: 'Toledo',
+
+coords: [-24.7169, -53.7419],
+
+info: 'Forte produção de suínos e milho.'
+
+},
+
+{
+
+nome: 'Castro',
+
+coords: [-24.7917, -50.0178],
+
+info: 'Importante bacia leiteira.'
+
+},
+
+{
+
+nome: 'Cascavel',
+
+coords: [-24.9556, -53.4583],
+
+info: 'Produção de grãos e agroindústria.'
+
+},
+
+{
+
+nome: 'Arapoti',
+
+coords: [-24.1597, -49.8292],
+
+info: 'Destaque na produção de mel.'
+
+},
+
+{
+
+nome: 'Guarapuava',
+
+coords: [-25.3700, -51.4900],
+
+info: 'Significativa produção de grãos.'
+
+},
+
+{
+
+nome: 'Londrina',
+
+coords: [-23.3056, -51.1522],
+
+info: 'Centro regional agrícola.'
+
+},
+
+];
+
+
+
+// Adiciona marcadores ao mapa
+
+pontos.forEach(ponto => {
+
+const marcador = L.marker(ponto.coords).addTo(mapa);
+
+marcador.bindPopup(`<b>${ponto.nome}</b><br>${ponto.info}`);
+
+});
+
+</script>
+
 </body>
+
 </html>
