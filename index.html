@@ -246,5 +246,11 @@
         marcador.bindPopup(`<b>${ponto.nome}</b><br>${ponto.info}`);
       });
     </script>
+
+      pontos.forEach(ponto => {
+        const marcador = L.marker(ponto.coords).addTo(mapa);
+        marcador.bindPopup(`<b>${ponto.nome}</b><br>${ponto.info}`);
+      });
+      
 </body>
 </html>
