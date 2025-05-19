@@ -68,7 +68,7 @@
                     </details>
                 </div>
             </div>
-            <a href="#topo" id="voltarTopo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
+            <a href="#topo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
         </section>
 
         <section id="mito2" class="mito-secao">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#topo" id="voltarTopo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
+            <a href="#topo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
         </section>
 
         <section id="mito3" class="mito-secao">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#topo" id="voltarTopo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
+            <a href="#topo" class="voltar-topo"><i class="fas fa-arrow-up"></i> Voltar ao Topo</a>
         </section>
 
         <section id="por-dentro" class="secao-geral">
@@ -244,20 +244,6 @@
       pontos.forEach(ponto => {
         const marcador = L.marker(ponto.coords).addTo(mapa);
         marcador.bindPopup(`<b>${ponto.nome}</b><br>${ponto.info}`);
-      });
-
-      // Seleciona o botão de "Voltar ao Topo"
-      const voltarTopo = document.getElementById('voltarTopo');
-
-      // Adiciona um evento de clique ao botão
-      voltarTopo.addEventListener('click', function(event) {
-        event.preventDefault(); // Impede o comportamento padrão do link (ir para o topo)
-
-        // Rolagem suave até o topo
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
       });
     </script>
 </body>
