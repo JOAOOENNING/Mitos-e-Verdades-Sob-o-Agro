@@ -346,23 +346,52 @@ main {
 }
 
 footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 30px;
-}
+      background-color: #f2f2f2;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
 
-footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    .footer-section {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
 
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
+    .footer-section h4 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 5px;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 8px;
+      width: 70%;
+      margin-right: 5px;
+    }
+
+    .newsletter button {
+      padding: 8px 12px;
+    }
+
+    .brand {
+      text-align: center;
+      flex: 1 1 100%;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
 
 .redes-sociais a {
     color: white;
