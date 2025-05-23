@@ -414,10 +414,10 @@ html {
         grid-template-columns: 1fr;
     }
 
-    .galeria img {
-        width: 120px;
-        height: 120px;
-    }
+   .galeria img {
+    width: 120px;
+    height: 120px;
+}
 
     .form-group input[type="text"],
     .form-group input[type="email"],
@@ -496,3 +496,4 @@ html {
         margin: 0 10px;
     }
 }
+    }
