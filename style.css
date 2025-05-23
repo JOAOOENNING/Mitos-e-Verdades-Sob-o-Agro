@@ -368,6 +368,7 @@ footer {
     .footer-section ul {
       list-style: none;
       padding: 0;
+      color: #f0f0f0;
     }
 
     .footer-section ul li {
