@@ -368,11 +368,12 @@ footer {
     .footer-section ul {
       list-style: none;
       padding: 0;
-      color: #f0f0f0;
+     
     }
 
     .footer-section ul li {
       margin-bottom: 5px;
+      color: #f0f0f0;
     }
 
     .newsletter input[type="email"] {
@@ -385,27 +386,6 @@ footer {
       padding: 8px 12px;
     }
 
-    .brand {
-      text-align: center;
-      flex: 1 1 100%;
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      text-decoration: none;
-
-.redes-sociais a {
-    color: white;
-    font-size: 1.2em;
-    margin-left: 15px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.redes-sociais a:hover {
-    color: #f8f9fa;
-}
 
 html {
     scroll-behavior: smooth;
@@ -498,4 +478,4 @@ html {
         margin: 0 10px;
     }
 }
-    }
+    
