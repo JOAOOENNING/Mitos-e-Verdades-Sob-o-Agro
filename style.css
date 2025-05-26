@@ -462,11 +462,9 @@ html {
         height: 200px;
         font-size: 0.9em;
     }
-
-  /* Estilos para o Rodapé */
 footer {
-    background-color: #333; /* Cor de fundo escura */
-    color: #fff; /* Cor do texto branca */
+    background-color: #333; 
+    color: #fff;
     padding: 20px 0; /* Espaçamento interno superior e inferior */
     text-align: center; /* Centraliza o texto */
     margin-top: 40px; /* Espaço entre o último conteúdo e o rodapé */
