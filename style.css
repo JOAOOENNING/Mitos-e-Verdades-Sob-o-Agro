@@ -1,10 +1,15 @@
+/* Base Styles & Typography */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #343a40;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #343a40; /* Dark gray text */
     line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 .container {
@@ -13,8 +18,9 @@ body {
     padding: 20px;
 }
 
+/* --- Header Section --- */
 header {
-    background-color: #28a745; /* Verde mais vibrante */
+    background-color: #28a745; /* Vibrant green */
     color: white;
     padding: 30px 0;
     text-align: center;
@@ -28,9 +34,10 @@ header h1 {
 
 header p {
     font-size: 1.1em;
-    opacity: 0.8;
+    opacity: 0.8; /* Slightly transparent for subtle effect */
 }
 
+/* Header Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -38,7 +45,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    display: inline; /* Horizontal navigation items */
     margin: 0 15px;
 }
 
@@ -50,27 +57,29 @@ nav a {
 }
 
 nav a:hover {
-    color: #f8f9fa;
+    color: #f8f9fa; /* Lighter color on hover */
 }
 
+/* --- Main Content Sections --- */
 main {
-    padding-bottom: 40px;
+    padding-bottom: 40px; /* Space above the footer */
 }
 
 .destaque {
-    background-color: #e9ecef;
+    background-color: #e9ecef; /* Lighter gray for highlights */
     padding: 30px;
     margin-bottom: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     text-align: center;
 }
 
 .destaque h2 {
-    color: #28a745;
+    color: #28a745; /* Green heading */
     margin-bottom: 15px;
 }
 
+/* Highlighted Myth Links */
 .destaque-mitos a {
     display: inline-block;
     background-color: #28a745;
@@ -84,14 +93,16 @@ main {
 }
 
 .destaque-mitos a:hover {
-    background-color: #1e7e34;
+    background-color: #1e7e34; /* Darker green on hover */
 }
 
 .destaque-mitos i {
     margin-right: 8px;
 }
 
-.mito-secao {
+/* Myth Sections (General Styling) */
+.mito-secao,
+.secao-geral {
     background-color: white;
     padding: 30px;
     margin-bottom: 30px;
@@ -99,21 +110,24 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.mito-secao h2 {
+.mito-secao h2,
+.secao-geral h2 {
     color: #28a745;
     margin-bottom: 20px;
     border-bottom: 2px solid #eee;
     padding-bottom: 15px;
 }
 
+/* Myth Content Layout */
 .conteudo-mito {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Two columns */
     gap: 30px;
 }
 
-.mito h3, .verdade h3 {
-    color: #1e7e34;
+.mito h3,
+.verdade h3 {
+    color: #1e7e34; /* Darker green for subheadings */
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -136,6 +150,7 @@ main {
     margin-top: 10px;
 }
 
+/* Graph Container */
 .grafico-container {
     margin-top: 20px;
     text-align: center;
@@ -157,6 +172,7 @@ main {
     margin-top: 5px;
 }
 
+/* Gallery Container */
 .galeria-container {
     margin-top: 20px;
     text-align: center;
@@ -171,17 +187,18 @@ main {
     display: flex;
     gap: 15px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows images to wrap to the next line */
 }
 
 .galeria img {
-    width: 150px;
+    width: 150px; /* Larger base size for desktop */
     height: 150px;
-    object-fit: cover;
+    object-fit: cover; /* Ensures images cover the area without distortion */
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Back to Top Button */
 .voltar-topo {
     display: block;
     text-align: center;
@@ -200,21 +217,7 @@ main {
     margin-right: 5px;
 }
 
-.secao-geral {
-    background-color: white;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.secao-geral h2 {
-    color: #28a745;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 15px;
-}
-
+/* Accordion Styling */
 .accordion {
     margin-top: 20px;
 }
@@ -252,10 +255,11 @@ main {
 .accordion-content {
     padding: 15px;
     background-color: white;
-    display: none; /* Inicialmente escondido */
+    display: none; /* Hidden by default, controlled by JavaScript */
     border-top: 1px solid #eee;
 }
 
+/* Map Section */
 .mapa-interativo {
     margin-top: 20px;
     text-align: center;
@@ -268,13 +272,13 @@ main {
 
 #mapa {
     height: 300px;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Placeholder background for map */
     border-radius: 5px;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #777;
+    color: #777; /* Text color for map placeholder */
 }
 
 .legenda-mapa {
@@ -282,6 +286,7 @@ main {
     color: #777;
 }
 
+/* Contact Form */
 .formulario-contato {
     margin-top: 20px;
     padding: 20px;
@@ -309,15 +314,15 @@ main {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
-    width: calc(100% - 12px);
-    padding: 8px;
+    width: calc(100% - 16px); /* Adjusting for padding and border */
+    padding: 10px; /* Slightly more padding */
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1em;
 }
 
 .form-group textarea {
-    resize: vertical;
+    resize: vertical; /* Allows vertical resizing */
 }
 
 .formulario-contato button[type="submit"] {
@@ -345,29 +350,60 @@ main {
     display: none;
 }
 
-
-html {
-    scroll-behavior: smooth;
+/* --- Footer Styles --- */
+footer {
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px; /* Space above the footer */
 }
-/* Tablet: até 992px */
+
+footer .container {
+    display: flex;
+    flex-direction: column; /* Stacks vertically on small screens */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.redes-sociais a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    color: #007bff; /* Blue on hover */
+}
+
+/* --- Responsive Design (Media Queries) --- */
+
+/* Tablet View (up to 992px) */
 @media (max-width: 992px) {
     .conteudo-mito {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column for myth content */
     }
 
-   .galeria img {
-    width: 120px;
-    height: 120px;
-}
+    .galeria img {
+        width: 120px; /* Slightly smaller images on tablet */
+        height: 120px;
+    }
 
+    /* Adjust full-width input for tablet, consider padding */
     .form-group input[type="text"],
     .form-group input[type="email"],
     .form-group textarea {
-        width: 100%;
+        width: calc(100% - 16px); /* Recalculate width for padding */
+    }
+
+    footer .container {
+        flex-direction: column; /* Keep column layout for consistency on tablets */
     }
 }
 
-/* Celular: até 600px */
+/* Mobile View (up to 600px) */
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.8em;
@@ -378,7 +414,7 @@ html {
     }
 
     nav ul li {
-        display: block;
+        display: block; /* Stack navigation items */
         margin: 10px 0;
         text-align: center;
     }
@@ -387,66 +423,35 @@ html {
     .mito-secao,
     .secao-geral,
     .formulario-contato {
-        padding: 20px;
+        padding: 20px; /* Reduce padding on smaller screens */
     }
 
     .galeria {
-        flex-direction: column;
+        flex-direction: column; /* Stack gallery images */
         align-items: center;
     }
 
     .galeria img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
+        width: 100%; /* Full width up to a max-width */
+        max-width: 300px; /* Limit max size for very wide phones */
+        height: auto; /* Maintain aspect ratio */
     }
 
     .accordion-item button {
-        flex-direction: column;
+        flex-direction: column; /* Stack accordion button content */
         align-items: flex-start;
     }
 
     .formulario-contato button[type="submit"] {
-        width: 100%;
+        width: 100%; /* Full width button */
         padding: 12px;
     }
 
-    .mapa-interativo #mapa {
-        height: 200px;
+    #mapa { /* Specific targeting for the map */
+        height: 200px; /* Shorter map on mobile */
         font-size: 0.9em;
     }
-footer {
-    background-color: #333; 
-    color: #fff;
-    padding: 20px 0; /* Espaçamento interno superior e inferior */
-    text-align: center; /* Centraliza o texto */
-    margin-top: 40px; /* Espaço entre o último conteúdo e o rodapé */
-}
 
-footer .container {
-    display: flex; /* Para alinhar itens em linha */
-    flex-direction: column; /* Em colunas em telas pequenas */
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
-    gap: 15px; /* Espaçamento entre os itens */
-}
-
-.redes-sociais a {
-    color: #fff; /* Cor dos ícones brancos */
-    font-size: 24px; /* Tamanho dos ícones */
-    margin: 0 10px; /* Espaçamento entre os ícones */
-    transition: color 0.3s ease; /* Transição suave na mudança de cor */
-}
-
-.redes-sociais a:hover {
-    color: #007bff; /* Cor dos ícones ao passar o mouse (ex: azul) */
-}
-
-/* Responsividade para o rodapé (opcional, mas recomendado) */
-@media (min-width: 768px) {
-    footer .container {
-        flex-direction: row; /* Em linha em telas maiores */
-        justify-content: space-between; /* Espaça os itens */
-    }
-}
+    /* Footer adjustments for mobile - already handled in base footer .container and tablet media query */
+    /* The footer styles inside this media query were redundant as they are already handled by the general footer styles and the 992px media query */
 }
