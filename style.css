@@ -345,47 +345,6 @@ main {
     display: none;
 }
 
-footer {
-      background-color:  #28a745;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      font-size: 14px;
-    }
-
-    .footer-section {
-      flex: 1 1 200px;
-      margin: 10px;
-    }
-
-    .footer-section h4 {
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: white;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-     
-    }
-
-    .footer-section ul li {
-      margin-bottom: 5px;
-      color: #f0f0f0;
-    }
-
-    .newsletter input[type="email"] {
-      padding: 8px;
-      width: 70%;
-      margin-right: 5px;
-    }
-
-    .newsletter button {
-      padding: 8px 12px;
-    }
-
 
 html {
     scroll-behavior: smooth;
@@ -405,12 +364,6 @@ html {
     .form-group input[type="email"],
     .form-group textarea {
         width: 100%;
-    }
-
-    footer .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
     }
 }
 
