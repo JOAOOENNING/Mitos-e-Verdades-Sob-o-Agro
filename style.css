@@ -463,19 +463,38 @@ html {
         font-size: 0.9em;
     }
 
-    footer p {
-        text-align: center;
-        width: 100%;
-    }
-
-    .redes-sociais {
-        text-align: center;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .redes-sociais a {
-        margin: 0 10px;
-    }
+  /* Estilos para o Rodapé */
+footer {
+    background-color: #333; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto branca */
+    padding: 20px 0; /* Espaçamento interno superior e inferior */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 40px; /* Espaço entre o último conteúdo e o rodapé */
 }
-    
+
+footer .container {
+    display: flex; /* Para alinhar itens em linha */
+    flex-direction: column; /* Em colunas em telas pequenas */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    gap: 15px; /* Espaçamento entre os itens */
+}
+
+.redes-sociais a {
+    color: #fff; /* Cor dos ícones brancos */
+    font-size: 24px; /* Tamanho dos ícones */
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    transition: color 0.3s ease; /* Transição suave na mudança de cor */
+}
+
+.redes-sociais a:hover {
+    color: #007bff; /* Cor dos ícones ao passar o mouse (ex: azul) */
+}
+
+/* Responsividade para o rodapé (opcional, mas recomendado) */
+@media (min-width: 768px) {
+    footer .container {
+        flex-direction: row; /* Em linha em telas maiores */
+        justify-content: space-between; /* Espaça os itens */
+    }
+}}
